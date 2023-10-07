@@ -44,7 +44,7 @@ class TestWin(QWidget):
 
     def initUI(self):
         ''' creates graphic elements '''
-        self.questionnary = AllQuestions()
+        #self.questionnary = AllQuestions()
         self.btn_next = QPushButton(txt_sendresults, self)
         self.btn_test1 = QPushButton('Start the first test')
         self.btn_test2 = QPushButton('Start doing squats')

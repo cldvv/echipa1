@@ -34,15 +34,14 @@ class MainWin(QWidget):
         self.btn_next = QPushButton(txt_next)
         self.hello_text = QLabel(txt_hello)
         self.instruction = QLabel(txt_instruction)
-        self.button = QPushButton(txt_next)
+
         self.layout = QVBoxLayout()
-        self.hello_text.addWidget(self.layout)
-        self.instruction.addWidget(self.layout)
-        self.button.addWidget(self.layout)
+
         self.layout_line = QVBoxLayout()
         self.layout_line.addWidget(self.hello_text, alignment = Qt.AlignLeft)
-        #adauga in panou Qlabelul instruction aliniat la stanga
-        #adauga in panou Qbutonul next aliniat pe centru      
+        self.layout_line.addWidget(self.instruction, alignment = Qt.AlignLeft)
+        self.layout_line.addWidget(self.btn_next, alignment = Qt.AlignCenter)
+   
         self.setLayout(self.layout_line)
 
     '''functia care este declansata la apasarea butonului next'''
@@ -54,13 +53,13 @@ class MainWin(QWidget):
     
     def connects(self):
         '''functia care conecteaza butonul de functia next_click'''
-        self.btn_next.clicked.connect(self.set_appear)
+        self.btn_next.clicked.connect(self.next_click)
 
     def set_appear(self):
         '''functia care seteaza aparenta ferestrei (titlu, dimensiune, pozitia pe ecran)'''
         '''in fisierul instr.py gasiti numele variabilelor in care sunt tinute titlul, latimea, lungimea si pozitia ferestrei'''
         self.setWindowTitle("Helth")
-        self.resize(800, 500)
+        self.resize(win_width, win_height)
         self.move(win_x, win_y)
 
 app = QApplication([])
