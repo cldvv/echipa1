@@ -35,7 +35,10 @@ class MainWin(QWidget):
         self.hello_text = QLabel(txt_hello)
         self.instruction = QLabel(txt_instruction)
         self.button = QPushButton(txt_next)
-
+        self.layout = QVBoxLayout()
+        self.hello_text.addWidget(self.layout)
+        self.instruction.addWidget(self.layout)
+        self.button.addWidget(self.layout)
         self.layout_line = QVBoxLayout()
         self.layout_line.addWidget(self.hello_text, alignment = Qt.AlignLeft)
         #adauga in panou Qlabelul instruction aliniat la stanga
