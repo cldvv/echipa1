@@ -46,8 +46,6 @@ class TestWin(QWidget):
         ''' creates graphic elements '''
         self.questionnary = AllQuestions()
         self.btn_next = QPushButton(txt_sendresults, self)
-        '''modificati cele 3 linii comentate de mai jos ca sa instantiati 3 butoane.
-           Cautati variabilele care contin textele in fisierul instr.py'''
         self.btn_test1 = QPushButton('Start the first test')
         self.btn_test2 = QPushButton('Start doing squats')
         self.btn_test3 = QPushButton('Start the final test')
