@@ -57,7 +57,7 @@ class MainWin(QWidget):
         '''in fisierul instr.py gasiti numele variabilelor in care sunt tinute titlul, latimea, lungimea si pozitia ferestrei'''
         self.setWindowTitle("Helth")
         self.resize(800, 500)
-        self.move(POZTIA_X, POZITIA_Y)
+        self.move(win_x, win_y)
 
 app = QApplication([])
 mw = MainWin()
