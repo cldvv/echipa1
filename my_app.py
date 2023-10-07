@@ -17,14 +17,14 @@ class MainWin(QWidget):
 
         '''apelarea metodei care creaza si configureaza elementele grafice'''
         self.initUI()
-        
+
         '''apelul metodei care leaga partea vizuala (exemplu butonul) de 
-           partea functionala (functia care se executa la apasarea butonului)'''
+        partea functionala (functia care se executa la apasarea butonului)'''
         self.connects()
 
         '''sets the window appearance (label, size, location)'''
         self.set_appear()
-        
+
         '''start:'''
         self.show()
 
