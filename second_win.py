@@ -5,9 +5,10 @@ from PyQt5.QtWidgets import (
         QHBoxLayout, QVBoxLayout, QGridLayout, 
         QGroupBox, QRadioButton,
         QPushButton, QLabel, QListWidget, QLineEdit)
+from time import *
 
-#from instr import *
-#from final_win import *
+from instr import *
+from final_win import *
 
 class Person():
     def __init__(self, name, age):

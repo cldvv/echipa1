@@ -45,19 +45,19 @@ class MainWin(QWidget):
     def next_click(self):
         '''in aceasta functie trebuie sa instantiem (cream) fereastra a2-a'''
         '''numele clasei care creaza feastra a2-a o gasiti in fisierul secon_win.py'''
-        #self.tw = NumeleClaseiFerestreiDoi()
+        self.tw = TestWin()
         self.hide() #aceasta instructiune ascunde fereastra actuala pt a face loc pt cea noua
     
     def connects(self):
         '''functia care conecteaza butonul de functia next_click'''
-        #self.btn_next.clicked.connect(self.NUMELE_FUNCTIEI_CARE_AFISEAZA_FEREASTRA_DOI)
+        self.btn_next.clicked.connect(self.set_appear)
 
     def set_appear(self):
         '''functia care seteaza aparenta ferestrei (titlu, dimensiune, pozitia pe ecran)'''
         '''in fisierul instr.py gasiti numele variabilelor in care sunt tinute titlul, latimea, lungimea si pozitia ferestrei'''
-        #self.setWindowTitle(TITLU_FEREASTRA)
-        #self.resize(LATIME_FEREASTRA, LUNGIME_FEREASTRA)
-        #self.move(POZTIA_X, POZITIA_Y)
+        self.setWindowTitle("Helth")
+        self.resize(800, 500)
+        self.move(POZTIA_X, POZITIA_Y)
 
 app = QApplication([])
 mw = MainWin()
