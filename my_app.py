@@ -6,8 +6,8 @@ from PyQt5.QtWidgets import (
         QGroupBox, QRadioButton,
         QPushButton, QLabel, QListWidget, QLineEdit)
 
-#from instr import *
-#from second_win import *
+from instr import *
+from second_win import *
 
        
 class MainWin(QWidget):
@@ -16,14 +16,14 @@ class MainWin(QWidget):
         super().__init__()
 
         '''apelarea metodei care creaza si configureaza elementele grafice'''
-        #self.in...
+        self.initUI()
         
         '''apelul metodei care leaga partea vizuala (exemplu butonul) de 
            partea functionala (functia care se executa la apasarea butonului)'''
-        #self.con...
+        self.connects()
 
         '''sets the window appearance (label, size, location)'''
-        #self.set_ap...
+        self.set_appear()
         
         '''start:'''
         self.show()
@@ -33,7 +33,8 @@ class MainWin(QWidget):
     def initUI(self):
         self.btn_next = QPushButton(txt_next)
         self.hello_text = QLabel(txt_hello)
-        #self.instruction = ...
+        self.instruction = QLabel(txt_instruction)
+        self.button = QPushButton(txt_next)
 
         self.layout_line = QVBoxLayout()
         self.layout_line.addWidget(self.hello_text, alignment = Qt.AlignLeft)
