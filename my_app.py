@@ -17,14 +17,14 @@ class MainWin(QWidget):
 
         '''apelarea metodei care creaza si configureaza elementele grafice'''
         self.initUI()
-        
+
         '''apelul metodei care leaga partea vizuala (exemplu butonul) de 
-           partea functionala (functia care se executa la apasarea butonului)'''
+        partea functionala (functia care se executa la apasarea butonului)'''
         self.connects()
 
         '''sets the window appearance (label, size, location)'''
         self.set_appear()
-        
+
         '''start:'''
         self.show()
 
@@ -39,7 +39,7 @@ class MainWin(QWidget):
         self.hello_text.addWidget(self.layout)
         self.instruction.addWidget(self.layout)
         self.button.addWidget(self.layout)
-        self.layout_line = QVBoxLayout()
+        
         self.layout_line.addWidget(self.hello_text, alignment = Qt.AlignLeft)
         #adauga in panou Qlabelul instruction aliniat la stanga
         #adauga in panou Qbutonul next aliniat pe centru      
