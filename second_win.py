@@ -44,13 +44,13 @@ class TestWin(QWidget):
 
     def initUI(self):
         ''' creates graphic elements '''
-        #self.questionnary = AllQuestions()
+        self.questionnary = AllQuestions()
         self.btn_next = QPushButton(txt_sendresults, self)
         '''modificati cele 3 linii comentate de mai jos ca sa instantiati 3 butoane.
            Cautati variabilele care contin textele in fisierul instr.py'''
-        #self.btn_test1 = butonul 'Start the first test'
-        #self.btn_test2 = butonul 'Start doing squats'
-        #self.btn_test3 = butonul 'Start the final test'
+        self.btn_test1 = QPushButton('Start the first test')
+        self.btn_test2 = QPushButton('Start doing squats')
+        self.btn_test3 = QPushButton('Start the final test')
 
 
         self.text_name = QLabel(txt_name)
@@ -71,10 +71,13 @@ class TestWin(QWidget):
         self.line_age.setValidator(self.validator) # age should be a number!
         self.line_age.setValidator(QIntValidator(7, 150))
 
-        '''la fel ca line_age de mai sus, instantiati alte 3 casute de text
-           line_test1 (txt_hinttest1), 
-           line_test2 (txt_hinttest2), 
-           line_test3 (txt_hinttest3)'''
+        '''la fel ca line_age de mai sus, instantiati alte 3 casute de text'''
+        self.line_test1 = QLineEdit(txt_hinttest1)
+        self.line_test1.setValidator(self.validator)
+        self.line_test1.setValidator(QIntValidator(150, 300))
+
+        self.line_test2 = QLineEdit(txt_hinttest2)
+        self.line_test3 = QLineEdit(txt_hinttest3)
         
         self.l_line = QVBoxLayout() #PANOUL DIN STANGA (pt texte, casute de text, butoane)
         self.r_line = QVBoxLayout() #PANOUL DIN DREAPTA (pt numarator genoflexiuni si temporizator)
