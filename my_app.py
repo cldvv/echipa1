@@ -1,5 +1,5 @@
 from PyQt5.QtCore import Qt, QTimer, QTime, QLocale
-from PyQt5.QtGui import QDoubleValidator, QIntValidator, QFont
+from PyQt5.QtGui import QDoubleValidator, QIntValidator, QFont # checking the types of input values
 from PyQt5.QtWidgets import (
         QApplication, QWidget, 
         QHBoxLayout, QVBoxLayout, QGridLayout, 
@@ -15,50 +15,41 @@ class MainWin(QWidget):
         ''' the window which the greeting is located in '''
         super().__init__()
 
-        '''apelarea metodei care creaza si configureaza elementele grafice'''
+        # creating and configuring graphic elements:
         self.initUI()
 
-        '''apelul metodei care leaga partea vizuala (exemplu butonul) de 
-        partea functionala (functia care se executa la apasarea butonului)'''
+        #establishes connections between elements
         self.connects()
 
-        '''sets the window appearance (label, size, location)'''
+        #sets the window appearance (label, size, location)
         self.set_appear()
 
-        '''start:'''
+        # start:
         self.show()
 
-    ''' crearea, configurarea si adaugarea in interfata a elementelor grafice
-        precum texte si butoane '''
     def initUI(self):
-        self.btn_next = QPushButton(txt_next)
+        ''' creates graphic elements '''
+        self.btn_next = QPushButton(txt_next, self)
         self.hello_text = QLabel(txt_hello)
         self.instruction = QLabel(txt_instruction)
 
-        self.layout = QVBoxLayout()
-
         self.layout_line = QVBoxLayout()
         self.layout_line.addWidget(self.hello_text, alignment = Qt.AlignLeft)
-        self.layout_line.addWidget(self.instruction, alignment = Qt.AlignLeft)
-        self.layout_line.addWidget(self.btn_next, alignment = Qt.AlignCenter)
-   
+        self.layout_line.addWidget(self.instruction, alignment = Qt.AlignLeft) 
+        self.layout_line.addWidget(self.btn_next, alignment = Qt.AlignCenter)          
         self.setLayout(self.layout_line)
 
-    '''functia care este declansata la apasarea butonului next'''
-    def next_click(self):
-        '''in aceasta functie trebuie sa instantiem (cream) fereastra a2-a'''
-        '''numele clasei care creaza feastra a2-a o gasiti in fisierul secon_win.py'''
-        self.tw = TestWin()
-        self.hide() #aceasta instructiune ascunde fereastra actuala pt a face loc pt cea noua
     
+    def next_click(self):
+        self.tw = TestWin()
+        self.hide()
+
     def connects(self):
-        '''functia care conecteaza butonul de functia next_click'''
         self.btn_next.clicked.connect(self.next_click)
 
+    ''' sets what the window will look like (label, size, location) '''
     def set_appear(self):
-        '''functia care seteaza aparenta ferestrei (titlu, dimensiune, pozitia pe ecran)'''
-        '''in fisierul instr.py gasiti numele variabilelor in care sunt tinute titlul, latimea, lungimea si pozitia ferestrei'''
-        self.setWindowTitle("Helth")
+        self.setWindowTitle(txt_title)
         self.resize(win_width, win_height)
         self.move(win_x, win_y)
 
