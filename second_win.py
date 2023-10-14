@@ -142,7 +142,7 @@ class TestWin(QWidget):
         self.text_timer.setText(time.toString("hh:mm:ss")[6:8]) 
 
     def timer3Event(self):
-        global time
+        global time 
         time = time.addSecs(-1)
         self.text_timer.setText(time.toString("hh:mm:ss"))
         if int(time.toString("hh:mm:ss")[6:8]) >=45:
@@ -156,7 +156,9 @@ class TestWin(QWidget):
             self.timer.stop()
     
     def timer_final(self):
+        global time
         time = QTime(0,1,0)
+        self.timer = QTimer()
         self.timer.timeout.connect(self.timer3Event)
         self.timer.start(1000)
 
