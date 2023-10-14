@@ -144,6 +144,11 @@ class TestWin(QWidget):
         ''' '''
 
     def timer_bob(self):
+        global time
+        time = QTime(0, 0, 30)
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.timer2Event)
+        self.timer.start(1500)
         ''' '''
 
     def timer3Event(self):
@@ -162,6 +167,9 @@ class TestWin(QWidget):
         ''' '''
 
     def timer_final(self):
+        global time 
+        time = QTime(0,1,0)
+        self.timer.timeout.connect(self.timer3Event)
         ''' '''
 
     def connects(self):
