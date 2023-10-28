@@ -165,6 +165,7 @@ class TestWin(QWidget):
         self.btn_test3.clicked.connect(self.timer_final)
 
     ''' sets what the window will look like (label, size, location) '''
+
     def set_appear(self):
         self.setWindowTitle(txt_title)
         self.resize(win_width, win_height)
